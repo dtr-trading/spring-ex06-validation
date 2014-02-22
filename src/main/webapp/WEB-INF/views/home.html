@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org">
+	
+<head th:fragment="header">
+    <meta charset="utf-8" />
+	<link type="text/css" rel="stylesheet" href="../../resources/css/bootstrap-3.1.1.min.css" th:href="@{/resources/css/bootstrap-3.1.1.min.css}"/>
+	<link type="text/css" rel="stylesheet" href="../../resources/css/bootstrap-theme-3.1.1.min.css" th:href="@{/resources/css/bootstrap-theme-3.1.1.min.css}"/>
+	<script type="text/css" src="../../resources/js/jquery-1.11.0.min.js" th:href="@{/resources/js/jquery-1.11.0.min.js}"></script>
+	<script type="text/css" src="../../resources/js/bootstrap-3.3.3.min.js" th:href="@{/resources/js/bootstrap-3.3.3.min.js}"></script>
+	<title th:text="#{user.page.title}">Title</title>
+</head>
+
+<body>
+<h1 data-th-text="#{home.page.title}">Title</h1>
+<p>
+<a href="strategy/list.html">Strategy list</a><br/>
+</p>
+</body>
+</html>

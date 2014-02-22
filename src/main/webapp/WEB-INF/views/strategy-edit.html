@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	  xmlns:th="http://www.thymeleaf.org">
+
+<head data-th-fragment="header">
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<title data-th-text="#{strategy.list.page.title}">Title</title>
+	
+	<!-- Bootstrap -->
+	<link type="text/css" rel="stylesheet" href="../../resources/css/bootstrap-3.1.1.min.css" th:href="@{/resources/css/bootstrap-3.1.1.min.css}" />
+	<link type="text/css" rel="stylesheet" href="../../resources/css/dashboard.css"	th:href="@{/resources/css/dashboard.css}" />
+	
+	<style>
+		.no-border-on-me>thead>tr>th,
+		.no-border-on-me>tbody>tr>th,
+		.no-border-on-me>tfoot>tr>th,
+		.no-border-on-me>thead>tr>td,
+		.no-border-on-me>tbody>tr>td,
+		.no-border-on-me>tfoot>tr>td
+		{
+			border-top-style: none;
+			border-bottom-style: none;
+		}
+	</style>
+	<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+	<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+	<!--[if lt IE 9]>
+	      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+	      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+	    <![endif]-->
+</head>
+<body>
+	<div class="container-fluid">
+		<div class="row">
+			<div class="main">
+			
+				<div class="col-sm-3"></div>
+				<div class="col-sm-6">
+					<h3 data-th-text="#{strategy.edit.head.title}">Edit Strategy</h3><br />
+					<form class="form-horizontal" action="#" data-th-action="@{/strategy/edit}" data-th-object="${strategyDTO}" method="post">
+						<div class="form-group">
+							<label class="col-sm-5 control-label" data-th-text="#{strategy.list.type.label}">Strategy Type</label>
+							<div class="col-sm-7">
+								<input type="text" hidden="hidden" data-th-value="*{id}" data-th-field="*{id}" ></input>
+								<input type="text" class="form-control" data-th-value="*{type}" data-th-field="*{type}" ></input>
+							</div>
+						</div>
+						<div class="form-group">
+							<label class="col-sm-5 control-label" data-th-text="#{strategy.list.name.label}">Strategy Name</label>
+							<div class="col-sm-7">
+								<input type="text" class="form-control" data-th-value="*{name}" data-th-field="*{name}" ></input>
+							</div>
+						</div>
+						<div class="form-group">
+							<div class="col-sm-offset-5 col-sm-7" >
+								<button type="submit" class="btn btn-primary" name="action" value="save" data-th-text="#{update.button.label}">Save</button>
+								<button type="submit" class="btn btn-default active" name="action" value="cancel" data-th-text="#{cancel.button.label}">Cancel</button>
+							</div>
+						</div>
+						<div class="form-group">
+							<div class="col-sm-offset-5 col-sm-7" >
+								<p class="text-danger" th:if="${#fields.hasErrors('type')}" th:errors="*{type}">type error</p> 
+								<p class="text-danger" th:if="${#fields.hasErrors('name')}" th:errors="*{name}">name error</p> 
+							</div>
+						</div>
+					</form>
+				</div>
+				<div class="col-sm-3"></div>
+				
+			</div>		<!-- END MAIN TAG -->
+		</div>		<!-- END ROW TAG -->
+	</div>	<!-- END CONTAINER TAG -->
+
+	<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+	<script type="text/css" src="../../resources/js/jquery-1.11.0.min.js" th:href="@{/resources/js/jquery-1.11.0.min.js}"></script>
+	<!-- Include all compiled plugins (below), or include individual files as needed -->
+	<script type="text/css" src="../../resources/js/bootstrap-3.3.3.min.js"	th:href="@{/resources/js/bootstrap-3.3.3.min.js}"></script>
+</body>
+</html>
+
+			
