@@ -9,8 +9,8 @@
 	<title data-th-text="#{strategy.list.page.title}">Title</title>
 	
 	<!-- Bootstrap -->
-	<link type="text/css" rel="stylesheet" href="../../resources/css/bootstrap-3.1.1.min.css" th:href="@{/resources/css/bootstrap-3.1.1.min.css}" />
-	<link type="text/css" rel="stylesheet" href="../../resources/css/dashboard.css"	th:href="@{/resources/css/dashboard.css}" />
+	<link type="text/css" rel="stylesheet" href="../../resources/css/bootstrap-3.1.1.min.css" data-th-href="@{/resources/css/bootstrap-3.1.1.min.css}" />
+	<link type="text/css" rel="stylesheet" href="../../resources/css/dashboard.css"	data-th-href="@{/resources/css/dashboard.css}" />
 	
 	<style>
 		.no-border-on-me>thead>tr>th,
@@ -83,7 +83,7 @@
 				
 				<br />
 				
-				<form class="form" action="#" data-th-action="@{/strategy/add}" data-th-object="${strategyDTO}" method="post">
+				<form class="form" action="#" data-th-action="@{/strategy/add}" data-th-object="${strategy}" method="post">
 				<div class="table responsive">
 					<table class="no-border-on-me table ">
 						<thead>
@@ -100,14 +100,14 @@
 								<td><input class="form-control" type="text"	data-th-field="*{type}" placeholder="Type"></input></td>
 								<td><input class="form-control" type="text"	data-th-field="*{name}" placeholder="Name"></input></td>
 								<td>
-									<button type="submit" class="btn btn-primary" data-th-text="#{add.strategy.button.label}">Add Strategy</button>
+									<button type="submit" class="btn btn-primary" data-th-text="#{button.label.add.strategy}">Add Strategy</button>
 								</td>
 							</tr>
 							<tr>
-								<td></td>
-								<td class="text-danger" th:if="${#fields.hasErrors('type')}" th:errors="*{type}">type error</td>
-								<td class="text-danger" th:if="${#fields.hasErrors('name')}" th:errors="*{name}">name error</td>
-								<td></td>
+								<td class="col-sm-1"></td>
+								<td class="col-sm-4 text-danger" data-th-if="${#fields.hasErrors('type')}" data-th-errors="*{type}">type error</td>
+								<td class="col-sm-4 text-danger" data-th-if="${#fields.hasErrors('name')}" data-th-errors="*{name}">name error</td>
+								<td class="col-sm-2"></td>
 							</tr>
 						</tbody>
 					</table>
@@ -119,8 +119,8 @@
 	</div>	<!-- END CONTAINER TAG -->
 
 	<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-	<script type="text/css" src="../../resources/js/jquery-1.11.0.min.js" th:href="@{/resources/js/jquery-1.11.0.min.js}"></script>
+	<script type="text/css" src="../../resources/js/jquery-1.11.0.min.js" data-th-href="@{/resources/js/jquery-1.11.0.min.js}"></script>
 	<!-- Include all compiled plugins (below), or include individual files as needed -->
-	<script type="text/css" src="../../resources/js/bootstrap-3.3.3.min.js"	th:href="@{/resources/js/bootstrap-3.3.3.min.js}"></script>
+	<script type="text/css" src="../../resources/js/bootstrap-3.3.3.min.js"	data-th-href="@{/resources/js/bootstrap-3.3.3.min.js}"></script>
 </body>
 </html>

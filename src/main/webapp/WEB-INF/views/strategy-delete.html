@@ -9,8 +9,8 @@
 	<title data-th-text="#{strategy.list.page.title}">Title</title>
 	
 	<!-- Bootstrap -->
-	<link type="text/css" rel="stylesheet" href="../../resources/css/bootstrap-3.1.1.min.css" th:href="@{/resources/css/bootstrap-3.1.1.min.css}" />
-	<link type="text/css" rel="stylesheet" href="../../resources/css/dashboard.css"	th:href="@{/resources/css/dashboard.css}" />
+	<link type="text/css" rel="stylesheet" href="../../resources/css/bootstrap-3.1.1.min.css" data-th-href="@{/resources/css/bootstrap-3.1.1.min.css}" />
+	<link type="text/css" rel="stylesheet" href="../../resources/css/dashboard.css"	data-th-href="@{/resources/css/dashboard.css}" />
 	
 	<style>
 		.no-border-on-me>thead>tr>th,
@@ -43,19 +43,19 @@
 						<div class="form-group">
 							<label class="col-sm-5 control-label" data-th-text="#{strategy.list.id.label}">Strategy Id</label>
 							<div class="col-sm-7">
-								<input type="text" class="form-control" data-th-field="${strategyDTO.id}" disabled="disabled"></input>
+								<input type="text" class="form-control" data-th-field="${strategy.id}" disabled="disabled"></input>
 							</div>
 						</div>
 						<div class="form-group">
 							<label class="col-sm-5 control-label" data-th-text="#{strategy.list.type.label}">Strategy Type</label>
 							<div class="col-sm-7">
-								<input type="text" class="form-control" data-th-field="${strategyDTO.type}" disabled="disabled"></input>
+								<input type="text" class="form-control" data-th-field="${strategy.type}" disabled="disabled"></input>
 							</div>
 						</div>
 						<div class="form-group">
 							<label class="col-sm-5 control-label" data-th-text="#{strategy.list.name.label}">Strategy Name</label>
 							<div class="col-sm-7">
-								<input type="text" class="form-control" data-th-field="${strategyDTO.name}" disabled="disabled"></input>
+								<input type="text" class="form-control" data-th-field="${strategy.name}" disabled="disabled"></input>
 							</div>
 						</div>
 					</form>
@@ -63,11 +63,11 @@
 						<div class="form-group">
 							<label class="col-sm-5 control-label"></label>
 							<div class="col-sm-7" >
-								<a href="#" data-th-href="@{/strategy/delete(id=${strategyDTO.id},phase=confirm)}">
-				            	<button type="button" class="btn btn-primary" data-th-text="#{delete.button.label}">Delete</button></a>
+								<a href="#" data-th-href="@{/strategy/delete(id=${strategy.id},phase=#{button.action.delete} )}">
+				            	<button type="button" class="btn btn-primary" data-th-text="#{button.label.delete}">Delete</button></a>
 				            	
-								<a href="#" data-th-href="@{/strategy/delete(id=${strategyDTO.id},phase=cancel)}">
-				            	<button type="button" class="btn btn-default active" data-th-text="#{cancel.button.label}">Cancel</button></a>
+								<a href="#" data-th-href="@{/strategy/delete(id=${strategy.id},phase=#{button.action.cancel} )}">
+				            	<button type="button" class="btn btn-default active" data-th-text="#{button.label.cancel}">Cancel</button></a>
 				            </div>
 						</div>
 					</div>
@@ -78,8 +78,8 @@
 	</div>	<!-- END CONTAINER TAG -->
 
 	<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-	<script type="text/css" src="../../resources/js/jquery-1.11.0.min.js" th:href="@{/resources/js/jquery-1.11.0.min.js}"></script>
+	<script type="text/css" src="../../resources/js/jquery-1.11.0.min.js" data-th-href="@{/resources/js/jquery-1.11.0.min.js}"></script>
 	<!-- Include all compiled plugins (below), or include individual files as needed -->
-	<script type="text/css" src="../../resources/js/bootstrap-3.3.3.min.js"	th:href="@{/resources/js/bootstrap-3.3.3.min.js}"></script>
+	<script type="text/css" src="../../resources/js/bootstrap-3.3.3.min.js"	data-th-href="@{/resources/js/bootstrap-3.3.3.min.js}"></script>
 </body>
 </html>
