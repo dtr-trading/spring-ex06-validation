@@ -4,6 +4,8 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.MappedSuperclass;
 
+import com.google.common.base.Objects;
+
 @MappedSuperclass()
 public abstract class BaseEntity {
 
@@ -21,29 +23,26 @@ public abstract class BaseEntity {
 
 	@Override
 	public String toString() {
-	    return String.format("%s(id=%d)", this.getClass().getSimpleName(), this.getId());
+		return String.format("%s(id=%d)", this.getClass().getSimpleName(), this.getId());
 	}
-	
+
 	@Override
-	public boolean equals(Object object) {
-		if (object == null)
+	public boolean equals(Object o) {
+		if (this == o)
+			return true;
+		if (o == null)
 			return false;
-		
-		if(!(object instanceof BaseEntity))
-	        return false;
-		
-	   return true;
+
+		if (o instanceof BaseEntity) {
+			final BaseEntity other = (BaseEntity) o;
+			return Objects.equal(getId(), other.getId());
+		}
+		return false;
 	}
-	
+
 	@Override
 	public int hashCode() {
-		int hash = 0;
-		
-		if (this.getId() != null ) {
-			hash = this.getId().hashCode();
-		}
-		
-		return hash;
+		return Objects.hashCode(getId());
 	}
 
 }
